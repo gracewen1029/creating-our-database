@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Welcome to The Johnny's Blog</title>
+</head>
+<body>
+ <!-- Site Header -->
+ <h1>Hi. I am Johnny. Welcome to my blog!</h1>
+
+<!-- Blog Post -->
+ <h2>My First Blog Post</h2>
+ <p>Here is League of Legends, the best game that I ever play</p>
+ <p><img src="http://images5.fanpop.com/image/photos/29300000/League-of-Legends-league-of-legends-29306645-1980-1200.jpg"></p>
+<p>League of Legends (abbreviated LoL) is a multiplayer online battle arena video game developed and published by Riot Games for Microsoft Windows and macOS. The game follows a freemium model and is supported by microtransactions, and was inspired by the Warcraft III: The Frozen Throne mod, Defense of the Ancients</p>
+ <button>Like</button>
+ <h2>Leave a Comment</h2>
+ <form action="{% url 'blog:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+ <textarea name="comment" placeholder="Please Enter Your Comment"></textarea><br>
+ <input type="submit" value="Post Me!">
+ </form>
+
+<h2>Comments</h2>
+User {{comment.user}} says: {{comment.comment}}
+</body>
+</html>
